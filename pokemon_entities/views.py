@@ -91,7 +91,7 @@ def show_pokemon(request, pokemon_id):
         return HttpResponseNotFound('<h1>Такой покемон не найден</h1>')
 
     previous_evolution = requested_pokemon.previous_evolution
-    next_evolution = requested_pokemon.next_evolution.first()
+    next_evolution = requested_pokemon.next_evolutions.first()
     requested_pokemon_entities = requested_pokemon.pokemon_entities.all()
     requested_pokemon_image_url = request.build_absolute_uri(requested_pokemon.image.url)
 
